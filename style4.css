@@ -1,0 +1,949 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a365d;
+    --secondary-color: #ffd700;
+    --accent-color: #2563eb;
+    --success-color: #059669;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--bg-light);
+}
+
+.welcome-section {
+    background: var(--bg-light); /* Warna latar belakang terang */
+    padding: 6rem 4rem; /* Tambahkan lebih banyak padding kiri dan kanan */
+    text-align: center; /* Teks rata tengah */
+    margin-bottom: 5rem; /* Tambahkan jarak lebih besar dengan section berikutnya */
+}
+
+.welcome-container {
+    max-width: 1200px; /* Perbesar lebar maksimum kontainer */
+    margin: 0 auto; /* Tengah secara horizontal */
+}
+
+.welcome-text {
+    font-size: 1.3rem; /* Sedikit perbesar ukuran font teks */
+    color: var(--text-dark); /* Warna teks */
+    line-height: 1.9; /* Tinggi baris untuk keterbacaan */
+    margin-bottom: 2.5rem; /* Tambahkan jarak antar paragraf */
+}
+
+/* Header & Navigation */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
+    color: white;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    font-weight: 600;
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
+    color: white;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,100 1000,0 1000,100"/></svg>');
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Car Grid */
+.cars-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.car-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.car-card:hover {
+    transform: scale(1.05); /* Perbesar gambar saat hover */
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.car-image img {
+    width: 100%; /* Gambar memenuhi lebar kontainer */
+    height: 200px; /* Tinggi gambar diperbesar */
+    object-fit: cover; /* Potong gambar agar sesuai dengan kontainer */
+    border-radius: 0.5rem; /* Tambahkan sudut melengkung */
+    box-shadow: var(--shadow-md); /* Tambahkan bayangan */
+    transition: transform 0.3s ease; /* Animasi saat hover */
+}
+
+.car-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 49%, rgba(255, 255, 255, 0.1) 50%, transparent 51%);
+    animation: shine 2s infinite;
+}
+
+.car-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.price-label {
+    display: block; /* Tampilkan sebagai blok */
+    font-size: 0.9rem; /* Ukuran font lebih kecil */
+    font-weight: 500; /* Tebal sedang */
+    color: var(--text-light); /* Warna teks lebih terang */
+    margin-bottom: 0.3rem; /* Jarak bawah kecil */
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.car-info {
+    padding: 1.5rem;
+}
+
+.car-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.car-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.car-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.feature-tag {
+    background: var(--bg-light);
+    color: var(--text-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.btn-book {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-book:hover::before {
+    left: 100%;
+}
+
+.btn-book:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Services Section */
+.services-section {
+    background: white;
+    padding: 4rem 2rem;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: var(--bg-light);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Why Choose Us Section */
+.why-us-section {
+    padding: 4rem 2rem;
+    background: var(--bg-light);
+}
+
+.why-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--primary-color);
+    color: white;
+    padding: 4rem 2rem;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--text-dark);
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.modal input,
+.modal select,
+.modal button {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.modal input:focus,
+.modal select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+.modal button {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.modal button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--text-dark);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Vision Mission Section */
+.vision-mission-section {
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(255, 255, 255, 0.8) 100%);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-mission-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(26,54,93,0.03)"><polygon points="0,0 1000,100 0,100"/></svg>');
+    background-size: cover;
+    pointer-events: none;
+}
+
+.vision-mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Vision Section */
+.vision-section {
+    margin-bottom: 5rem;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.vision-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.vision-icon {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.vision-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.vision-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.vision-item {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    position: relative;
+    transition: all 0.4s ease;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+    overflow: visible;
+}
+
+.vision-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(26, 54, 93, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.vision-item:hover::before {
+    opacity: 1;
+}
+
+.vision-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.vision-number {
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.vision-item:hover .vision-number {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #fbbf24 100%);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.vision-item p {
+    margin: 0;
+    padding-top: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Mission Section */
+.mission-section {
+    margin-top: 5rem;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.mission-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.mission-icon {
+    background: linear-gradient(135deg, var(--success-color) 0%, #10b981 100%);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.mission-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.mission-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.mission-item {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    position: relative;
+    transition: all 0.4s ease;
+    border-left: 5px solid var(--success-color);
+    box-shadow: var(--shadow-sm);
+    overflow: visible;
+}
+
+.mission-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(5, 150, 105, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mission-item:hover::before {
+    opacity: 1;
+}
+
+.mission-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.mission-number {
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--success-color) 0%, #10b981 100%);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.mission-item:hover .mission-number {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #fbbf24 100%);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.mission-item p {
+    margin: 0;
+    padding-top: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+footer {
+    background-color: var(--primary-color); /* Gunakan warna utama */
+    color: var(--bg-white); /* Gunakan warna putih untuk teks */
+    text-align: center; /* Teks rata tengah */
+    padding: 20px 0; /* Padding atas dan bawah */
+    font-size: 14px; /* Ukuran font */
+    font-family: 'Arial', sans-serif; /* Font yang bersih dan modern */
+    border-top: 3px solid var(--secondary-color); /* Garis atas dengan warna sekunder */
+}
+
+footer p {
+    margin: 0; /* Hilangkan margin default */
+    line-height: 1.5; /* Tinggi baris untuk keterbacaan */
+}
+
+footer a {
+    color: var(--secondary-color); /* Gunakan warna sekunder untuk link */
+    text-decoration: none; /* Hilangkan garis bawah */
+    font-weight: bold; /* Tebalkan teks */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Tambahkan garis bawah saat hover */
+}
