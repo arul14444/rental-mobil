@@ -1,11 +1,45 @@
+<?php
+// get json file
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://cdn01.rumahweb.com/under-construction/panduan.json");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$links = json_decode(curl_exec($ch));
+curl_close($ch);
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    <meta name="description" content="CV BOY MAKMUR JAYA menyediakan layanan rental mobil di Medan dengan armada lengkap dan harga terjangkau. Booking mudah via WhatsApp">
+    <meta name="keywords" content="rental mobil medan, sewa mobil medan, cv boy makmur jaya, rental mobil harian medan, mobil dengan sopir medan">
+    <meta name="robots" content="index, follow">
+      <link rel="canonical" href="https://boyrentcar.com/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CarRental",
+      "name": "CV BOY MAKMUR JAYA",
+      "url": "https://boyrentcar.com",
+      "telephone": "+6281396565157",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. TUBA II NO. 26",
+        "addressLocality": "Medan",
+        "addressCountry": "ID"
+      }
+    }
+    </script>
+    
+    
     <title>CV BOY MAKMUR JAYA - Rental Mobil Terpercaya di Medan</title>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style4.css">
+    
 </head>
 <body>
     <!-- Header -->
@@ -32,7 +66,7 @@
     <section id="home" class="hero">
     <div class="hero-content">
         <h1>Rental Mobil Terpercaya di Medan</h1>
-        <p class="hero-subtitle">Kami menyediakan berbagai pilihan mobil yang nyaman, aman, dan terawat untuk perjalanan Anda—baik untuk keperluan pribadi, bisnis, maupun liburan.</p>
+        <p class="hero-subtitle">Kami menyediakan berbagai pilihan mobil yang nyaman, aman, dan terawat untuk perjalanan Anda, baik untuk keperluan pribadi, bisnis, maupun liburan.</p>
         <p class="hero-subtitle">Pelayanan ramah, harga bersahabat, dan kepuasan pelanggan adalah prioritas kami.</p>
         <div class="hero-stats">
             <div class="stat-item">
@@ -304,7 +338,7 @@
             <div class="mission-section">
                 <div class="mission-header">
                     <div class="mission-icon">
-                        <i class="fas fa-target"></i>
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
                     <h3 class="mission-title">Misi Kami</h3>
                 </div>
@@ -362,13 +396,13 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Hubungi Kami</h3>
-                <div class="contact-item">
+                <a href="https://maps.app.goo.gl/vo4GrNtHMCdkeTGE8?g_st=aw" style="text-decoration: none; color: #fff;" class="contact-item">
                     <i class="fas fa-map-marker-alt contact-icon"></i>
                     <div class="contact-text">
                         <strong>Alamat:</strong><br>
-                        Jl. TUBA II NO. 26 KOTA MEDAN
+                        Jl. Tuba II No.26, Tegal Sari Mandala III, Kec. Medan Denai, Kota Medan 
                     </div>
-                </div>
+                </a>
                 <div class="contact-item">
                     <i class="fas fa-phone contact-icon"></i>
                     <div class="contact-text">
