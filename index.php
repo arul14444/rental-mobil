@@ -204,6 +204,27 @@ curl_close($ch);
                     </button>
                 </div>
             </div>
+
+            <div class="car-card">
+                <div class="car-image">
+                    <img src="images/fortuner.png" alt="Toyota fortuner">
+                </div>
+                <div class="car-info">
+                    <h3 class="car-name">Fortuner VRZ</h3>
+                    <div class="car-price">
+                        <span class="price-label">Mulai dari</span>
+                        Rp 1.000.000 / hari
+                    </div>
+                    <div class="car-features">
+                        <span class="feature-tag">7 Seats</span>
+                        <span class="feature-tag">Automatic</span>
+                        <span class="feature-tag">Premium</span>
+                    </div>
+                    <button class="btn-book" onclick="openBookingModal('Fortuner VRZ')">
+                        <i class="fas fa-calendar-alt"></i> Booking Sekarang
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
