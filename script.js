@@ -144,3 +144,25 @@ document.getElementById("tglMulai").addEventListener("change", function () {
     const startDate = this.value;
     document.getElementById("tglSelesai").setAttribute("min", startDate);
 });
+
+const burgerBtn = document.getElementById('burgerBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+burgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // biar gak langsung nutup
+    dropdownMenu.classList.toggle('show');
+});
+
+// Tutup dropdown kalau klik di luar
+document.addEventListener('click', (e) => {
+    if (!dropdownMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+        dropdownMenu.classList.remove('show');
+    }
+});
+
+// Tutup kalau klik menu item
+document.querySelectorAll('#dropdownMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        dropdownMenu.classList.remove('show');
+    });
+});

@@ -8,39 +8,41 @@ curl_close($ch);
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="icon" type="image/png" href="images/Logo.png">
     <meta name="description" content="CV BOY MAKMUR JAYA menyediakan layanan rental mobil di Medan dengan armada lengkap dan harga terjangkau. Booking mudah via WhatsApp">
     <meta name="keywords" content="rental mobil medan, sewa mobil medan, cv boy makmur jaya, rental mobil harian medan, mobil dengan sopir medan">
     <meta name="robots" content="index, follow">
-      <link rel="canonical" href="https://boyrentcar.com/">
+    <link rel="canonical" href="https://boyrentcar.com/">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CarRental",
-      "name": "CV BOY MAKMUR JAYA",
-      "url": "https://boyrentcar.com",
-      "telephone": "+6281396565157",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Jl. TUBA II NO. 26",
-        "addressLocality": "Medan",
-        "addressCountry": "ID"
-      }
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "CarRental",
+            "name": "CV BOY MAKMUR JAYA",
+            "url": "https://boyrentcar.com",
+            "telephone": "+6281396565157",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jl. TUBA II NO. 26",
+                "addressLocality": "Medan",
+                "addressCountry": "ID"
+            }
+        }
     </script>
-    
-    
+
+
     <title>CV BOY MAKMUR JAYA - Rental Mobil Terpercaya di Medan</title>
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style4.css">
-    
+
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -56,46 +58,55 @@ curl_close($ch);
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="burgerBtn">
                 <i class="fas fa-bars"></i>
             </button>
-        </nav>
-    </header>
 
+        </nav>
+        <div id="dropdownMenu" class="dropdown-menu">
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#cars">Mobil</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
     <!-- Hero Section -->
     <section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Rental Mobil Terpercaya di Medan</h1>
-        <p class="hero-subtitle">Kami menyediakan berbagai pilihan mobil yang nyaman, aman, dan terawat untuk perjalanan Anda, baik untuk keperluan pribadi, bisnis, maupun liburan.</p>
-        <p class="hero-subtitle">Pelayanan ramah, harga bersahabat, dan kepuasan pelanggan adalah prioritas kami.</p>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Unit Mobil Aktif</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">7+</span>
-                <span class="stat-label">Tahun Pengalaman</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">12K+</span>
-                <span class="stat-label">Pelanggan Terlayani</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">32</span>
-                <span class="stat-label">Provinsi Dilayani</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">98%</span>
-                <span class="stat-label">Tingkat Kepuasan Pelanggan</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">60+</span>
-                <span class="stat-label">Sopir Profesional & Terlatih</span>
+        <div class="hero-content">
+            <h1>Rental Mobil Terpercaya di Medan</h1>
+            <p class="hero-subtitle">Kami menyediakan berbagai pilihan mobil yang nyaman, aman, dan terawat untuk perjalanan Anda, baik untuk keperluan pribadi, bisnis, maupun liburan.</p>
+            <p class="hero-subtitle">Pelayanan ramah, harga bersahabat, dan kepuasan pelanggan adalah prioritas kami.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Unit Mobil Aktif</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label">Tahun Pengalaman</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12K+</span>
+                    <span class="stat-label">Pelanggan Terlayani</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">32</span>
+                    <span class="stat-label">Provinsi Dilayani</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Tingkat Kepuasan Pelanggan</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">60+</span>
+                    <span class="stat-label">Sopir Profesional & Terlatih</span>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Cars Section -->
     <section id="cars" class="cars-section">
@@ -346,7 +357,7 @@ curl_close($ch);
     <section id="vision-mission" class="vision-mission-section">
         <div class="vision-mission-container">
             <h2 class="section-title">Visi & Misi Perusahaan</h2>
-            
+
             <!-- Vision Section -->
             <div class="vision-section">
                 <div class="vision-header">
@@ -411,7 +422,7 @@ curl_close($ch);
             <form id="bookingForm">
                 <label for="nama">Nama:</label>
                 <input type="text" id="nama" required>
-    
+
                 <label for="mobil">Jenis Mobil:</label>
                 <select id="mobil">
                     <option value="Avanza">Avanza</option>
@@ -419,18 +430,18 @@ curl_close($ch);
                     <option value="Pajero Sport">Pajero Sport</option>
                     <option value="Fortuner VRZ">Fortuner VRZ</option>
                 </select>
-    
+
                 <label for="tglMulai">Tanggal Mulai Sewa:</label>
                 <input type="date" id="tglMulai" required>
-    
+
                 <label for="tglSelesai">Tanggal Selesai Sewa:</label>
                 <input type="date" id="tglSelesai" required>
-    
+
                 <button type="submit">Booking via WhatsApp</button>
             </form>
         </div>
     </div>
-    
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -441,7 +452,7 @@ curl_close($ch);
                     <i class="fas fa-map-marker-alt contact-icon"></i>
                     <div class="contact-text">
                         <strong>Alamat:</strong><br>
-                        Jl. Tuba II No.26, Tegal Sari Mandala III, Kec. Medan Denai, Kota Medan 
+                        Jl. Tuba II No.26, Tegal Sari Mandala III, Kec. Medan Denai, Kota Medan
                     </div>
                 </a>
                 <div class="contact-item">
@@ -467,10 +478,11 @@ curl_close($ch);
                     </div>
                 </div>
             </div>
-        </section>
-    </body>
-    <footer>
-        <p>© 2025 CV BOY MAKMUR JAYA. Semua hak dilindungi.</p>
-    </footer>
-    <script src="./script.js"></script>
+    </section>
+</body>
+<footer>
+    <p>© 2025 CV BOY MAKMUR JAYA. Semua hak dilindungi.</p>
+</footer>
+<script src="./script.js"></script>
+
 </html>
